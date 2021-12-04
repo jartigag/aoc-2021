@@ -1,16 +1,13 @@
 import { logAnswer } from '../utils/logging';
-import { calculateFuelForMass, day1 } from './day1';
+import { countIncreases, day1 } from './day1';
 import { data } from './day1.data';
 
 test('Provided test cases', () => {
-  expect(calculateFuelForMass(12)).toBe(2);
-  expect(calculateFuelForMass(14)).toBe(2);
-  expect(calculateFuelForMass(1969)).toBe(654);
-  expect(calculateFuelForMass(100756)).toBe(33583);
+    expect(countIncreases([199, 200, 208, 210, 200, 207, 240, 269, 260, 263])).toBe(7);
 });
 
 test('Returns an answer', () => {
-  logAnswer(day1(data));
-  expect(typeof day1(data)).toBe('number');
-  expect(day1(data)).toBeGreaterThan(0);
+    logAnswer(day1(data));
+    expect(typeof day1(data)).toBe('number');
+    expect(day1(data)).toBeGreaterThan(0);
 });
