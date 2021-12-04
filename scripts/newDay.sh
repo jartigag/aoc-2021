@@ -1,31 +1,39 @@
 #!/bin/bash
 mkdir src/day$1
+sessionCookie=$(cat cookie)
+curl --cookie "session=$sessionCookie" https://adventofcode.com/2021/day/$1/input > src/day$1/input
 
 if [ $? -ne 0 ] ; then
   echo "Day already exists!"
   exit
 fi
 
-echo "export const day$1 = () => {
-  return $1;
-};" >> src/day$1/day$1.ts
+echo "import { data } from './day$1.data';
 
-echo "import { day$1 } from './day$1';
-import { logAnswer } from '../utils/logging';
+export const func = (array: number[]) => {
+  return $1;
+};
+
+export const day$1 = (input: number[]) => func(data);" >> src/day$1/day$1.ts
+
+echo "import { logAnswer } from '../utils/logging';
+import { day$1 } from './day$1';
+import { data } from './day$1.data';
 
 test('Provided test cases', () => {
-  expect(day$1()).toBe($1);
+  expect(day$1(data)).toBe($1);
 });
 
 test('Returns an answer', () => {
-  logAnswer(day$1());
-  expect(typeof day$1()).toBe('number');
-  expect(day$1()).toBeGreaterThan(0);
+  logAnswer(day$1(data));
+  expect(typeof day$1(data)).toBe('number');
+  expect(day$1(data)).toBeGreaterThan(0);
 });" >> src/day$1/day$1.test.ts
 
-echo "import { parseInput } from '../utils/input';
+echo "import * as fs from 'fs';
+import { parseInput } from '../utils/input';
 
-const input = '';
+const input = fs.readFileSync(__dirname + '/input').toString();
 
-export const data = parseInput(input);" >> src/day$1/day$1.data.ts
+export const data = parseInput(input) as number[];" >> src/day$1/day$1.data.ts
 exit
