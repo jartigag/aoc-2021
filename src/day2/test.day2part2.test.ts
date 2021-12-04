@@ -1,6 +1,6 @@
 import { logAnswer } from '../utils/logging';
-import { data } from './day2.data';
-import { calculateNewPositionAndDepth, day2part2 } from './day2.part2';
+import { data } from './data.day2';
+import { calculateNewPositionAndDepth, day2part2 } from './day2part2';
 
 test('Provided test cases', () => {
     expect(

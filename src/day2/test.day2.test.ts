@@ -1,6 +1,6 @@
 import { logAnswer } from '../utils/logging';
+import { data } from './data.day2';
 import { calculatePositionAndDepth, day2 } from './day2';
-import { data } from './day2.data';
 
 test('Provided test cases', () => {
     expect(

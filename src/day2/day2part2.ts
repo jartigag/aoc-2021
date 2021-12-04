@@ -1,6 +1,6 @@
-import { data } from './day2.data';
+import { data } from './data.day2';
 
-interface NamedParameters {
+export interface NamedParameters {
     aim?: number;
     horizontalPosition: number;
     depth: number;

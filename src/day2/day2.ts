@@ -1,5 +1,5 @@
-import { data } from './day2.data';
-import { NamedParameters } from './day2.part2';
+import { data } from './data.day2';
+import { NamedParameters } from './day2part2';
 
 export const calculatePositionAndDepth = (params: NamedParameters): number => {
     for (let i = 0; i < params.instructions.length; i++) {

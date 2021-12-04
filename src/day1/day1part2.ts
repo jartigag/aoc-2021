@@ -1,4 +1,4 @@
-import { data } from './day1.data';
+import { data } from './data.day1';
 
 export const countSumIncreases = (array: number[]) => {
     let count = 0;
