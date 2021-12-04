@@ -18,11 +18,18 @@ yarn install v1.22.15
 
 Done in 2.42s.
 
-real	0m2,601s
-user	0m3,294s
-sys	0m1,299s
+real    0m2,601s
+user    0m3,294s
+sys 0m1,299s
 
 $ du -hs node_modules/
-147M	node_modules/
+147M    node_modules/
 ```
 not bad.. 😅
+
+### solutions
+
+- [Day 1:  Sonar Sweep](https://github.com/jartigag/aoc-2021/blob/main/./src/day1/day1.ts)
+	- [Day 1, part 2](https://github.com/jartigag/aoc-2021/blob/main/./src/day1/day1part2.ts)
+- [Day 2:  Dive!](https://github.com/jartigag/aoc-2021/blob/main/./src/day2/day2.ts)
+	- [Day 2, part 2](https://github.com/jartigag/aoc-2021/blob/main/./src/day2/day2part2.ts)
