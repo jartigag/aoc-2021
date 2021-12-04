@@ -18,10 +18,10 @@ export const day$1 = (input: number[]) => func(data);" >> src/day$1/day$1.ts
 
 echo "import { logAnswer } from '../utils/logging';
 import { day$1 } from './day$1';
-import { data } from './day$1.data';
+import { func, data } from './day$1.data';
 
 test('Provided test cases', () => {
-  expect(day$1(data)).toBe($1);
+  expect(func(data)).toBe($1);
 });
 
 test('Returns an answer', () => {
