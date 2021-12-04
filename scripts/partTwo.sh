@@ -9,7 +9,7 @@ export const day$1part2 = (input: number[]) => func(data);" >> src/day$1/day$1pa
 
 echo "import { logAnswer } from '../utils/logging';
 import { data } from './data.day$1';
-import { func, day$1part2 } from './day$1.part2';
+import { func, day$1part2 } from './day$1part2';
 
 test('Provided test cases', () => {
     expect(func(data)).toBe($1);
