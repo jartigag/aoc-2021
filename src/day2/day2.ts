@@ -1,24 +1,26 @@
 import { data } from './day2.data';
+import { NamedParameters } from './day2.part2';
 
-export const func = (horizontal_position: number, depth: number, instructions: string[]) => {
-    for (let i = 0; i < instructions.length; i++) {
-        let [direction, units] = instructions[i].split(' ');
+export const calculatePositionAndDepth = (params: NamedParameters): number => {
+    for (let i = 0; i < params.instructions.length; i++) {
+        let [direction, units] = params.instructions[i].split(' ');
         switch (direction) {
             case 'forward':
-                horizontal_position += Number(units);
+                params.horizontalPosition += Number(units);
                 break;
             case 'down':
-                depth += Number(units);
+                params.depth += Number(units);
                 break;
             case 'up':
-                depth -= Number(units);
+                params.depth -= Number(units);
                 break;
         }
     }
-    return horizontal_position * depth;
+    return params.horizontalPosition * params.depth;
 };
 
-export const day2 = (input: string[]) => func(0, 0, data);
+export const day2 = (input: string[]) =>
+    calculatePositionAndDepth({ horizontalPosition: 0, depth: 0, instructions: data });
 
 /*
 --- Day 2: Dive! ---

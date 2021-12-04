@@ -1,9 +1,16 @@
 import { logAnswer } from '../utils/logging';
 import { data } from './day2.data';
-import { day2part2, func } from './day2.part2';
+import { calculateNewPositionAndDepth, day2part2 } from './day2.part2';
 
 test('Provided test cases', () => {
-    expect(func(0, 0, 0, ['forward 5', 'down 5', 'forward 8', 'up 3', 'down 8', 'forward 2'])).toBe(900);
+    expect(
+        calculateNewPositionAndDepth({
+            aim: 0,
+            horizontalPosition: 0,
+            depth: 0,
+            instructions: ['forward 5', 'down 5', 'forward 8', 'up 3', 'down 8', 'forward 2'],
+        }),
+    ).toBe(900);
 });
 
 test('Returns an answer', () => {

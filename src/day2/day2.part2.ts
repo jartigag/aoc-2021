@@ -1,25 +1,33 @@
 import { data } from './day2.data';
 
-export const func = (horizontal_position: number, depth: number, aim: number, instructions: string[]) => {
-    for (let i = 0; i < instructions.length; i++) {
-        let [direction, units] = instructions[i].split(' ');
+interface NamedParameters {
+    aim?: number;
+    horizontalPosition: number;
+    depth: number;
+    instructions: string[];
+}
+
+export const calculateNewPositionAndDepth = (params: NamedParameters): number => {
+    for (let i = 0; i < params.instructions.length; i++) {
+        let [direction, units] = params.instructions[i].split(' ');
         switch (direction) {
             case 'forward':
-                horizontal_position += Number(units);
-                depth += aim * Number(units);
+                params.horizontalPosition += Number(units);
+                params.depth += params.aim * Number(units);
                 break;
             case 'down':
-                aim += Number(units);
+                params.aim += Number(units);
                 break;
             case 'up':
-                aim -= Number(units);
+                params.aim -= Number(units);
                 break;
         }
     }
-    return horizontal_position * depth;
+    return params.horizontalPosition * params.depth;
 };
 
-export const day2part2 = (input: string[]) => func(0, 0, 0, data);
+export const day2part2 = (input: string[]) =>
+    calculateNewPositionAndDepth({ aim: 0, horizontalPosition: 0, depth: 0, instructions: data });
 
 /*
 --- Part Two ---
