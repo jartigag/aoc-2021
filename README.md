@@ -27,10 +27,16 @@ $ du -hs node_modules/
 ```
 not bad.. 😅
 
-### solutions
-
-- [Day 1:  Sonar Sweep](https://github.com/jartigag/aoc-2021/blob/main/./src/day1/day1.ts)
-	- [Day 1, part 2](https://github.com/jartigag/aoc-2021/blob/main/./src/day1/day1part2.ts)
-- [Day 2:  Dive!](https://github.com/jartigag/aoc-2021/blob/main/./src/day2/day2.ts)
-	- [Day 2, part 2](https://github.com/jartigag/aoc-2021/blob/main/./src/day2/day2part2.ts)
-- [Day 3:  Binary Diagnostic](https://github.com/jartigag/aoc-2021/blob/main/./src/day3/day3.ts)
+### solutions and posts
+	
+- [Day 1:  Sonar Sweep](https://github.com/jartigag/aoc-2021/blob/main/src/day1/day1.ts)  
+	- [Day 1, part 2](https://github.com/jartigag/aoc-2021/blob/main/src/day1/day1part2.ts)
+	<details> <summary> from <a href="https://www.reddit.com/r/adventofcode/comments/r71sss/2021_day_1_ue4_short_intro_video">r/adventofcode</a> <code>#viz</code> [UE4] Short intro video! </summary> <a href="https://youtu.be/RgNOVMDoNgs"><img src="http://i3.ytimg.com/vi/RgNOVMDoNgs/maxresdefault.jpg"/></a> </details> 
+	
+- [Day 2:  Dive!](https://github.com/jartigag/aoc-2021/blob/main/src/day2/day2.ts)  
+	- [Day 2, part 2](https://github.com/jartigag/aoc-2021/blob/main/src/day2/day2part2.ts)
+	<details> <summary> from <a href="https://www.reddit.com/r/adventofcode/comments/r7o188/2021_day_2_part_1_python_terminal_visualization">r/adventofcode</a> <code>#viz</code> [Python] Terminal Visualization. (Don't worry, Christmas smoke is non-toxic!) Source in the comments. </summary> <a href="https://www.reddit.com/r/adventofcode/comments/r7o188/2021_day_2_part_1_python_terminal_visualization"> <img src="https://external-preview.redd.it/zbexd6zMaZt8AcyDTSyvslGjwFdbLIohJ3EDPVjWUsk.png?width=960&crop=smart&format=pjpg&auto=webp&s=c7f0b306905f9635d1f935995f6e9e3f882d9498"/> </a> </details> 
+	
+- [Day 3:  Binary Diagnostic](https://github.com/jartigag/aoc-2021/blob/main/src/day3/day3.ts)  
+	- [Day 3, part 2](https://github.com/jartigag/aoc-2021/blob/main/src/day3/day3part2.ts)
+	<details> <summary> from <a href="https://www.reddit.com/r/adventofcode/comments/r7x4yk/2021_day_3_part_2pygame_oxy_filter/">r/adventofcode</a> <code>#viz</code> [Pygame] OXY filter </summary> <a href="https://www.reddit.com/r/adventofcode/comments/r7x4yk/2021_day_3_part_2pygame_oxy_filter/"> <img src="https://external-preview.redd.it/kuPpBvcF3VGo8wr1JJPR_yrTP8d0H1wgqGOnfcgU9tI.png?width=960&crop=smart&format=pjpg&auto=webp&s=2e8addc9519f9fe4e43d1f4d4d83b2fe9e7864f4"/> </a> </details> 

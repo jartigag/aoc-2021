@@ -2,16 +2,24 @@
 
 rm README.md
 
-for f in $(find . -name "*.ts" -not -path "./node_modules/*" -not -path "./src/utils/*" -not -name "*test*" -not -name "*data*" -not -name "*part*")
+for f in $(find src/ -name "*.ts" -not -path "src/utils/*" -not -name "*test*" -not -name "*data*" -not -name "*part*")
 do
     title=$(grep -e "--- Day " $f | sed 's/--- //g' | sed 's/ ---//g' | sed 's/: /:  /g')
-    echo "- [$title](https://github.com/jartigag/aoc-2021/blob/main/$f)" >> solutions_links.tmp
+    echo "- [$title](https://github.com/jartigag/aoc-2021/blob/main/$f)  " >> solutions_links.tmp
 done
 
-for f in $(find . -name "*part*.ts" -not -path "./node_modules/*" -not -path "./src/utils/*" -not -name "*test*" -not -name "*data*")
+for f in $(find src/ -name "*part*.ts" -not -path "./src/utils/*" -not -name "*test*" -not -name "*data*")
 do
     day=$(echo $f | sed 's/\(.*\)part.*/\1/' | tail -c 2)
     echo "- [Day $day, part 2](https://github.com/jartigag/aoc-2021/blob/main/$f)" >> solutions_links.tmp
+done
+
+for f in $(find subreddit/ -name "*day*.html")
+do
+    day=$(echo $f | sed 's/subreddit\/day\(.*\).html/\1/')
+    oneline_html=$(sed 's/  //g' $f | tr '\n' ' ')
+    echo "- [DAY $day·$oneline_html" >> solutions_links.tmp
+    echo "- [DAY $day·" >> solutions_links.tmp
 done
 
 
@@ -45,9 +53,8 @@ $ du -hs node_modules/
 \`\`\`
 not bad.. 😅
 
-### solutions
-
+### solutions and posts
 EOF
 
-sort solutions_links.tmp | sed 's/\(.*\)part.*/\t\1part2.ts)/g' >> README.md
+sort solutions_links.tmp | sed 's/\(.*\)part.*ts)$/\t\1part2.ts)/g' | sed 's/\(- \[DAY.*·\)/\t/g' >> README.md
 rm solutions_links.tmp
