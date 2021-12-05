@@ -1,8 +1,10 @@
 import { logAnswer } from '../utils/logging';
 import { data } from './data.day4';
-import { Bingo, day4 } from './day4';
+import { Bingo } from './day4';
+import { day4part2 } from './day4part2';
 
 test('Provided test cases', () => {
+    const checkingLastScore = true;
     expect(
         new Bingo(
 `7,4,9,5,11,17,23,2,0,14,21,24,10,16,13,6,15,25,12,22,18,20,8,19,3,26,1
@@ -24,12 +26,12 @@ test('Provided test cases', () => {
 18  8 23 26 20
 22 11 13  6  5
  2  0 12  3  7`,
-        ).solve(),
-    ).toBe(4512);
+        ).solve(checkingLastScore),
+    ).toBe(1924);
 });
 
 test('Returns an answer', () => {
-    logAnswer(day4(data));
-    expect(typeof day4(data)).toBe('number');
-    expect(day4(data)).toBeGreaterThan(0);
+    logAnswer(day4part2(data));
+    expect(typeof day4part2(data)).toBe('number');
+    expect(day4part2(data)).toBeGreaterThan(0);
 });
