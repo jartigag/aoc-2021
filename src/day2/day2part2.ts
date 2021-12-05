@@ -48,4 +48,10 @@ different than you first thought:
 
 Again note that since you're on a submarine, down and up do the opposite of what
 you might expect: "down" means aiming in the positive direction.
+
+[..]
+
+Using this new interpretation of the commands, calculate the horizontal position
+and depth you would have after following the planned course. What do you get if
+you multiply your final horizontal position by your final depth?
 */

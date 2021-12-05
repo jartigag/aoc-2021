@@ -24,8 +24,12 @@ just too much noise in the data.
 
 Instead, consider sums of a three-measurement sliding window.
 
+[..]
+
 Your goal now is to count the number of times the sum of measurements in this
 sliding window increases from the previous sum.
+
+[..]
 
 Consider sums of a three-measurement sliding window. How many sums are larger
 than the previous sum?

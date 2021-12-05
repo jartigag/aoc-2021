@@ -78,6 +78,8 @@ The bit criteria depends on which type of rating value you want to find:
     position. If 0 and 1 are equally common, keep values with a 0 in the
     position being considered.
 
+[..]
+
 Use the binary numbers in your diagnostic report to calculate the oxygen
 generator rating and CO2 scrubber rating, then multiply them together. What is
 the life support rating of the submarine? (Be sure to represent your answer in
