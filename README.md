@@ -40,3 +40,4 @@ not bad.. 😅
 - [Day 3:  Binary Diagnostic](https://github.com/jartigag/aoc-2021/blob/main/src/day3/day3.ts)  
 	- [Day 3, part 2](https://github.com/jartigag/aoc-2021/blob/main/src/day3/day3part2.ts)
 	<details> <summary> from <a href="https://www.reddit.com/r/adventofcode/comments/r7x4yk/2021_day_3_part_2pygame_oxy_filter/">r/adventofcode</a> <code>#viz</code> [Pygame] OXY filter </summary> <a href="https://www.reddit.com/r/adventofcode/comments/r7x4yk/2021_day_3_part_2pygame_oxy_filter/"> <img src="https://external-preview.redd.it/kuPpBvcF3VGo8wr1JJPR_yrTP8d0H1wgqGOnfcgU9tI.png?width=960&crop=smart&format=pjpg&auto=webp&s=2e8addc9519f9fe4e43d1f4d4d83b2fe9e7864f4"/> </a> </details> 
+- [](https://github.com/jartigag/aoc-2021/blob/main/src/day4/day4.ts)  
