@@ -28,6 +28,7 @@ jobs:
           git diff
           git config --global user.email "actions@users.noreply.github.com"
           git config --global user.name "README-bot"
+          mv leaderboard.md README.md
           git add -A
           git commit -m "Update leaderboard" || exit 0
           git push origin leaderboard
