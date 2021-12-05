@@ -1,9 +1,12 @@
+import { data } from "./data.day4";
+
 const transposeBoard = (board: number[][]) => board[0].map((row, col) => board.map((row) => row[col]));
 
 export class Bingo {
     private numbers: number[] = [];
     private boards: number[][][] = [];
     private lastSaidNumber: number = 0;
+    private winGames: Set<any> = new Set();
 
     constructor(data: string) {
         const parts = data.split('\n\n');
@@ -11,18 +14,24 @@ export class Bingo {
         this.boards = parts.map((board) => board.split('\n').map((row) => row.trim().split(/\s+/g).map(Number)));
     }
 
-    private checkWins(): number {
-        for (const board of this.boards) {
-            const horizontal = board.some((row) => row.every((cell) => cell === -1));
-            const vertical = transposeBoard(board).some((row) => row.every((cell) => cell === -1));
+    private getScore(checkingLastScore: boolean = false): number {
+        for (const [idx,board] of this.boards.entries()) {
+            const horizontalMarkedNumbersInARow = board.some((row) => row.every((cell) => cell === -1));
+            const verticalMarkedNumbersInARow = transposeBoard(board).some((row) => row.every((cell) => cell === -1));
 
-            if (horizontal || vertical) {
+            if (horizontalMarkedNumbersInARow || verticalMarkedNumbersInARow) {
                 const sumUnmarked = ([] as number[])
                     .concat(...board)
                     .filter((cell) => cell !== -1)
                     .reduce((a, b) => a + b);
 
-                return sumUnmarked * this.lastSaidNumber;
+                if (checkingLastScore) {
+                    this.winGames.add(idx);
+                }
+
+                if (!checkingLastScore || this.winGames.size === this.boards.length) {
+                    return sumUnmarked * this.lastSaidNumber;
+                }
             }
         }
         return -1;
@@ -41,17 +50,17 @@ export class Bingo {
         return this.lastSaidNumber;
     }
 
-    public solve(): number {
+    public solve(checkingLastScore: boolean = false): number {
         let result = -1;
         while (result < 0) {
             this.markBoards(this.sayNextNumber());
-            result = this.checkWins();
+            result = this.getScore(checkingLastScore);
         }
         return result;
     }
 }
 
-export const day4 = (input: string) => new Bingo(input).solve();
+export const day4 = (input: string) => new Bingo(data).solve();
 
 /*
 --- Day 4: Giant Squid ---
