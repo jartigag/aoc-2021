@@ -1,50 +1,42 @@
 import { data } from './data.day3';
+import { bitCriteria } from './day3';
 
-const bitCriteria = (array: number[][], position: number, mostCommonValue: boolean) => {
-    let countOnes = array.filter((x) => x[position] == 1).length;
-    let countZeros = array.filter((x) => x[position] == 0).length;
-    //console.log(`ones: ${countOnes}, zeros: ${countZeros}`);
-    if (mostCommonValue) {
-        if (countOnes >= countZeros) {
-            return array.filter((row) => row[position] == 1);
-        } else {
-            return array.filter((row) => row[position] == 0);
-        }
-    } else {
-        if (countOnes < countZeros) {
-            return array.filter((row) => row[position] == 1);
-        } else {
-            return array.filter((row) => row[position] == 0);
-        }
+export interface NamedParameters {
+    position?: number;
+    array: number[][];
+    mostCommonValue: boolean;
+}
+
+const filterBytes = (params: NamedParameters) => {
+    let countOnes = params.array.filter((x) => x[params.position] == 1).length;
+    let countZeros = params.array.filter((x) => x[params.position] == 0).length;
+
+    if (bitCriteria(countOnes, countZeros, params.mostCommonValue)) {
+        return params.array.filter((row) => row[params.position] == 1);
     }
+    return params.array.filter((row) => row[params.position] == 0);
 };
 
 export const getOxygenGeneratorRating = (array: number[][]) => {
-    let oxygenGeneratorRating = '';
-
     let position = 0;
     while (array.length > 1) {
-        array = bitCriteria(array, position, true);
-        //console.log(array.length);
+        array = filterBytes({ position: position, array: array, mostCommonValue: true });
         position += 1;
     }
 
-    oxygenGeneratorRating = array[0].join('');
+    let oxygenGeneratorRating = array[0].join('');
 
     return parseInt(oxygenGeneratorRating, 2);
 };
 
 export const getCO2ScrubberRating = (array: number[][]) => {
-    let co2ScrubberRating = '';
-
     let position = 0;
     while (array.length > 1) {
-        array = bitCriteria(array, position, false);
-        //console.log(array.length);
+        array = filterBytes({ position: position, array: array, mostCommonValue: false });
         position += 1;
     }
 
-    co2ScrubberRating = array[0].join('');
+    let co2ScrubberRating = array[0].join('');
 
     return parseInt(co2ScrubberRating, 2);
 };

@@ -1,4 +1,3 @@
-import { logAnswer } from '../utils/logging';
 import { data } from './data.day3';
 import { day3, getEpsilonRate, getGammaRate, getPowerConsumption } from './day3';
 
@@ -56,7 +55,7 @@ test('Provided test cases', () => {
 });
 
 test('Returns an answer', () => {
-    logAnswer(day3(data));
+    //logAnswer(day3(data));
     expect(typeof day3(data)).toBe('number');
     expect(day3(data)).toBeGreaterThan(0);
 });

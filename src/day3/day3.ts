@@ -1,47 +1,44 @@
 import { data } from './data.day3';
+import { NamedParameters } from './day3part2';
 
 export const transpose = (array: number[][]) => {
     return array[0].map((_, colIndex) => array.map((row) => row[colIndex]));
 };
 
-export const getGammaRate = (array: number[][]) => {
+export const bitCriteria = (countOnes: number, countZeros: number, mostCommonValue: boolean) => {
+    if (mostCommonValue) {
+        return countOnes >= countZeros;
+    }
+    return countOnes < countZeros;
+};
+
+const getRate = (params: NamedParameters) => {
     let gammaRate = '';
-    let countOnes = 0;
-    let countZeros = 0;
+    for (let i = 0; i < params.array.length; i++) {
+        let countOnes = params.array[i].filter((x) => x == 1).length;
+        let countZeros = params.array[i].filter((x) => x == 0).length;
 
-    let transposedArray = transpose(array);
-
-    for (let i = 0; i < transposedArray.length; i++) {
-        countOnes = transposedArray[i].filter((x) => x == 1).length;
-        countZeros = transposedArray[i].filter((x) => x == 0).length;
-        if (countOnes > countZeros) {
+        if (bitCriteria(countOnes, countZeros, params.mostCommonValue)) {
             gammaRate = gammaRate.concat('1');
         } else {
             gammaRate = gammaRate.concat('0');
         }
     }
+    return gammaRate;
+};
+
+export const getGammaRate = (array: number[][]) => {
+    let transposedArray = transpose(array);
+    let gammaRate = getRate({ array: transposedArray, mostCommonValue: true });
 
     return parseInt(gammaRate, 2);
 };
 
 export const getEpsilonRate = (array: number[][]) => {
-    let gammaRate = '';
-    let countOnes = 0;
-    let countZeros = 0;
-
     let transposedArray = transpose(array);
+    let epsilonRate = getRate({ array: transposedArray, mostCommonValue: false });
 
-    for (let i = 0; i < transposedArray.length; i++) {
-        countOnes = transposedArray[i].filter((x) => x == 1).length;
-        countZeros = transposedArray[i].filter((x) => x == 0).length;
-        if (countOnes < countZeros) {
-            gammaRate = gammaRate.concat('1');
-        } else {
-            gammaRate = gammaRate.concat('0');
-        }
-    }
-
-    return parseInt(gammaRate, 2);
+    return parseInt(epsilonRate, 2);
 };
 
 export const getPowerConsumption = (array: number[][]) => {

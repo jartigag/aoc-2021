@@ -1,4 +1,3 @@
-import { logAnswer } from '../utils/logging';
 import { data } from './data.day3';
 import { day3part2, getCO2ScrubberRating, getLifeSupportRating, getOxygenGeneratorRating } from './day3part2';
 
@@ -56,7 +55,7 @@ test('Provided test cases', () => {
 });
 
 test('Returns an answer', () => {
-    logAnswer(day3part2(data));
+    //logAnswer(day3part2(data));
     expect(typeof day3part2(data)).toBe('number');
     expect(day3part2(data)).toBeGreaterThan(0);
 });
