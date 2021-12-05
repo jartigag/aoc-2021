@@ -1,6 +1,6 @@
 import { data } from './data.day3';
 
-const transpose = (array: number[][]) => {
+export const transpose = (array: number[][]) => {
     return array[0].map((_, colIndex) => array.map((row) => row[colIndex]));
 };
 
