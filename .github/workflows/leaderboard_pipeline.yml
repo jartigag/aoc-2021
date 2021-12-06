@@ -19,7 +19,10 @@ jobs:
           git merge --allow-unrelated-histories -s ours leaderboard
           git switch leaderboard
           git update-index --assume-unchanged README.md
-          git merge main
+          git merge --no-ff --no-commit main
+          git reset HEAD README.md
+          git checkout -- README.md
+          git commit -m "Merge branch 'leaderboard'"
       - name: Update leaderboard
         run: ./update_leaderboard.sh
         env:

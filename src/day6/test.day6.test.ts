@@ -1,7 +1,7 @@
 import { parseInput } from '../utils/input';
 import { logAnswer } from '../utils/logging';
 import { data } from './data.day6';
-import { day6, simulateLanternfish as simulateLanternfish } from './day6';
+import { day6, simulateLanternfish } from './day6';
 
 test('Provided test cases', () => {
     expect(simulateLanternfish(parseInput(`3,4,3,1,2`), 18)).toBe(26);
