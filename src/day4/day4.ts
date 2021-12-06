@@ -65,10 +65,24 @@ export const day4 = (input: string) => new Bingo(data).solve();
 /*
 --- Day 4: Giant Squid ---
 
-You're already almost 1.5km (almost a mile) below the surface of the ocean, already so deep that you can't see any sunlight. What you can see, however, is a giant squid that has attached itself to the outside of your submarine.
+You're already almost 1.5km (almost a mile) below the surface of the ocean,
+already so deep that you can't see any sunlight. What you can see, however, is a
+giant squid that has attached itself to the outside of your submarine.
 
 Maybe it wants to play bingo?
 
 [..]
 
+The submarine has a bingo subsystem to help passengers (currently, you and the
+giant squid) pass the time. It automatically generates a random order in which
+to draw numbers and a random set of boards (your puzzle input).
+
+[..]
+
+The score of the winning board can now be calculated. Start by finding the sum
+of all unmarked numbers on that board [..]. Then, multiply that sum by the
+number that was just called when the board won to get the final score.
+
+To guarantee victory against the giant squid, figure out which board will win
+first. What will your final score be if you choose that board?
 */
