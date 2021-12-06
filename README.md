@@ -44,3 +44,4 @@ not bad.. 😅
 - [Day 4:  Giant Squid](https://github.com/jartigag/aoc-2021/blob/main/src/day4/day4.ts)  
 	- [Day 4, part 2](https://github.com/jartigag/aoc-2021/blob/main/src/day4/day4part2.ts)
 	<details> <summary> from <a href="https://www.reddit.com/r/adventofcode/comments/r8wq0c/2021_day_4_bingo_blinkenlights/">r/adventofcode</a> <code>#viz</code> Bingo Blinkenlights </summary> <a href="https://www.reddit.com/r/adventofcode/comments/r8wq0c/2021_day_4_bingo_blinkenlights/"> <img src="https://external-preview.redd.it/CQ2SnbwRcpxOpCchIo5BL-pCO2uvnLuh-JNzwZwza2c.png?width=960&crop=smart&format=pjpg&auto=webp&s=878b488ea3dedc2e33536145fcdab17bc7475c82"/> </a> </details> 
+- [Day 6:  Lanternfish](https://github.com/jartigag/aoc-2021/blob/main/src/day6/day6.ts)  
