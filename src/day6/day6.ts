@@ -12,7 +12,7 @@ export const simulateLanternfish = (fish: number[], days: number): number => {
             ...fishesGroupedByInternalTimer.slice(1),
             ...fishesGroupedByInternalTimer.slice(0, 1),
         ];
-        // Reset fishes at day 6 (and increase by the number of new fishes)
+        // Reset fishes at day 6 (and increase by the number of new fishes):
         fishesGroupedByInternalTimer[6] += fishesGroupedByInternalTimer[8];
     }
 
