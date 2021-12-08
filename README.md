@@ -6,6 +6,9 @@ if i get the time, i'll try to take a look at [r/adventofcode](https://www.reddi
 
 > as last year, our group “[TLMn00bs](https://github.com/TLMn00bs)” keeps sharing our solutions in this [repository](https://github.com/TLMn00bs/advent-of-code).
 
+i've also learnt how to set a [workflow file in Github Actions](https://github.com/jartigag/aoc-2021/blob/main/.github/workflows/leaderboard_pipeline.yml) to [update our scores in the leaderboard branch's readme](https://github.com/jartigag/aoc-2021/tree/leaderboard#readme), using [this bash script](https://github.com/jartigag/aoc-2021/blob/main/update_leaderboard.sh).
+it was a bit annoying to test the pipeline, but i [discovered a couple of things about git merge](https://github.com/jartigag/aoc-2021/search?q=path%3A.github%2Fworkflows+git+merge) on the way and i see a lot of potential in this tool.
+
 #### getting started
 
 ```shell
