@@ -50,3 +50,4 @@ not bad.. 😅
 - [Day 6:  Lanternfish](https://github.com/jartigag/aoc-2021/blob/main/src/day6/day6.ts)  
 	- [Day 6, part 2](https://github.com/jartigag/aoc-2021/blob/main/src/day6/day6part2.ts)
 - [Day 8:  Seven Segment Search](https://github.com/jartigag/aoc-2021/blob/main/src/day8/day8.ts)  
+	- [Day 8, part 2](https://github.com/jartigag/aoc-2021/blob/main/src/day8/day8part2.ts)
